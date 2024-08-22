@@ -1,0 +1,12 @@
+spring:
+  profiles: local
+
+  flyway:
+    url: jdbc:postgresql://localhost:5432/customer
+    user: elazazy
+    password: password
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/customer
+    username: elazazy
+    password: password

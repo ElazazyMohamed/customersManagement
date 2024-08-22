@@ -1,0 +1,12 @@
+spring:
+  profiles: docker
+
+  flyway:
+    url: jdbc:postgresql://db:5432/customer
+    user: elazazy
+    password: password
+
+  datasource:
+    url: jdbc:postgresql://db:5432/customer
+    username: elazazy
+    password: password
