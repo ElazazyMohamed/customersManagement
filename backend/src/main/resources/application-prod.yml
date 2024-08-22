@@ -1,5 +1,7 @@
 spring:
-  profiles: prod
+  config:
+    activate:
+      on-profile: prod
 
   flyway:
     url: jdbc:postgresql://awseb-e-83qpzm4u6i-stack-awsebrdsdatabase-fpvwuwhqxbgy.cd42k4my8g1b.eu-central-1.rds.amazonaws.com:5432/customer
