@@ -1,7 +1,6 @@
 spring:
-  config:
-    activate:
-      on-profile: docker
+  profiles:
+    active: docker
 
   flyway:
     url: jdbc:postgresql://db:5432/customer

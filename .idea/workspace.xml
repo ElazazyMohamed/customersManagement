@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="494b271d-18d4-43c2-88e3-6b8d3b19fc90" name="Changes" comment="Fix Configurations with yml Files">
+    <list default="true" id="494b271d-18d4-43c2-88e3-6b8d3b19fc90" name="Changes" comment="Fix Configurations with yml Files 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application-docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application-docker.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application-local.yml" afterDir="false" />
@@ -74,7 +74,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1724283392408</updated>
-      <workItem from="1724283393442" duration="2602000" />
+      <workItem from="1724283393442" duration="3013000" />
     </task>
     <task id="LOCAL-00001" summary="Fix Configurations with yml Files">
       <option name="closed" value="true" />
@@ -84,7 +84,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724285666593</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fix Configurations with yml Files 2">
+      <option name="closed" value="true" />
+      <created>1724286044333</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1724286044333</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,6 +100,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix Configurations with yml Files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Configurations with yml Files" />
+    <MESSAGE value="Fix Configurations with yml Files 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Configurations with yml Files 2" />
   </component>
 </project>
