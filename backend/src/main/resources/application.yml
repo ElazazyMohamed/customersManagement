@@ -1,33 +1,17 @@
 server:
   port: 8080
-#  port: ${PORT}
   error:
     include-message: always
 
 spring:
+  profiles:
+    active: local
+
   flyway:
-#    url: jdbc:postgresql://localhost:5432/customer
-#    user: elazazy
-#    password: password
-#    url: ${SPRING_DATASOURCE_URL}
-#    user: ${SPRING_DATASOURCE_USERNAME}
-#    password: ${SPRING_DATASOURCE_PASSWORD}
-    url: jdbc:postgresql://db:5432/customer
-    user: elazazy
-    password: password
     schemas: public
     driver-class-name: org.postgresql.Driver
 
   datasource:
-#    url: jdbc:postgresql://localhost:5432/customer
-#    username: elazazy
-#    password: password
-#    url: ${SPRING_DATASOURCE_URL}
-#    user: ${SPRING_DATASOURCE_USERNAME}
-#    password: ${SPRING_DATASOURCE_PASSWORD}
-    url: jdbc:postgresql://db:5432/customer
-    user: elazazy
-    password: password
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -38,5 +22,6 @@ spring:
       hibernate:
         format_sql: true
     show-sql: true
+
   main:
     web-application-type: servlet # This is the default value, so you can skip spring configuration

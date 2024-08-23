@@ -18,21 +18,21 @@ public class Main {
         ConfigurableApplicationContext applicationContext = SpringApplication.run(Main.class, args);
     }
 
-//    @Bean
-//    CommandLineRunner runner(CustomerRepository customerRepository) {
-//        return args -> {
-//            for(int i=0; i<10; i++) {
-//                Faker faker = new Faker();
-//                Random random = new Random();
-//                String firstName = faker.name().firstName();
-//                String lastName = faker.name().lastName();
-//                Customer customer = new Customer(
-//                        firstName + " " + lastName,
-//                        lastName.toLowerCase() + '.' + firstName.toLowerCase() + random.nextInt(1, 99) + "@gmail.com",
-//                        random.nextInt(16, 99)
-//                );
-//                customerRepository.save(customer);
-//            }
-//        };
-//    }
+    @Bean
+    CommandLineRunner runner(CustomerRepository customerRepository) {
+        return args -> {
+            for(int i=0; i<10; i++) {
+                Faker faker = new Faker();
+                Random random = new Random();
+                String firstName = faker.name().firstName();
+                String lastName = faker.name().lastName();
+                Customer customer = new Customer(
+                        firstName + " " + lastName,
+                        lastName.toLowerCase() + '.' + firstName.toLowerCase() + random.nextInt(1, 99) + "@gmail.com",
+                        random.nextInt(16, 99)
+                );
+                customerRepository.save(customer);
+            }
+        };
+    }
 }
