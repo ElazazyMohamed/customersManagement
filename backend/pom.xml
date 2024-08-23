@@ -32,6 +32,8 @@
 	<properties>
 		<java.version>17</java.version>
 		<docker.username>elazazymohamed</docker.username>
+		<docker.image.name>elazazy-api</docker.image.name>
+		<docker.image.tag/>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
 	</properties>
@@ -214,8 +216,9 @@
 						</platforms>
 					</from>
 					<to>
-						<image>docker.io/${docker.username}/${project.artifactId}:${project.version}</image>
+<!--						<image>docker.io/${docker.username}/${project.artifactId}:${project.version}</image>-->
 <!--						<image>docker.io/elazazymohamed/elazazy-api:0.0.1-SNAPSHOT</image>-->
+						<image>docker.io/${docker.username}/${docker.image.name}:${docker.image.tag}</image>
 						<tags>
 							<tag>latest</tag>
 						</tags>

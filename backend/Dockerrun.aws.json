@@ -24,6 +24,10 @@
         {
           "name": "SPRING_DATASOURCE_PASSWORD",
           "value": "password"
+        },
+        {
+          "Name": "SPRING_PROFILES_ACTIVE",
+          "Value": "docker"
         }
       ]
     }
