@@ -1,7 +1,4 @@
 spring:
-  profiles:
-    active: docker
-
   flyway:
     url: jdbc:postgresql://db:5432/customer
     user: elazazy

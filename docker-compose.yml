@@ -24,7 +24,6 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/customer
       SPRING_DATASOURCE_USERNAME: elazazy
       SPRING_DATASOURCE_PASSWORD: password
-      PORT: 8080
     ports:
       - "8080:8080"
     networks:

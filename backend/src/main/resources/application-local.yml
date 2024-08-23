@@ -1,7 +1,4 @@
 spring:
-  profiles:
-    active: local
-
   flyway:
     url: jdbc:postgresql://localhost:5432/customer
     user: elazazy

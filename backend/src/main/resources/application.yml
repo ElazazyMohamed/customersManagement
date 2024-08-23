@@ -4,6 +4,9 @@ server:
     include-message: always
 
 spring:
+  profiles:
+    active: local
+
   flyway:
     schemas: public
     driver-class-name: org.postgresql.Driver
@@ -19,9 +22,6 @@ spring:
       hibernate:
         format_sql: true
     show-sql: true
+
   main:
     web-application-type: servlet # This is the default value, so you can skip spring configuration
-
-logging:
-  level:
-    root: INFO
