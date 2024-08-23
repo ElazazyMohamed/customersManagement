@@ -1,0 +1,51 @@
+name: CI - Build Backend
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'backend/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16.3
+        env:
+          POSTGRES_USER: elazazy
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: customer
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    defaults:
+      run:
+        working-directory: ./backend
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'maven'
+
+      - name: Wait for Postgres to be Ready
+        run: |
+          until pg_isready -h localhost -p 5432 -U elazazy; do
+            echo "Waiting for database...";
+            sleep 3;
+          done
+
+      - name: Build and Run Unit/Integration Tests with Maven
+        env:
+          SPRING_PROFILES_ACTIVE: local
+        run: mvn -ntp -B verify
