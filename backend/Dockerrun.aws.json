@@ -27,7 +27,7 @@
         },
         {
           "name": "SPRING_PROFILES_ACTIVE",
-          "Value": "docker"
+          "value": "docker"
         }
       ]
     }
