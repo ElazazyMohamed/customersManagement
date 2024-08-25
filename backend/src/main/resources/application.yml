@@ -3,9 +3,9 @@ server:
   error:
     include-message: always
 
-spring:
-  profiles:
-    active: local
+#spring:
+#  profiles:
+#    active: local
 
   flyway:
     schemas: public
