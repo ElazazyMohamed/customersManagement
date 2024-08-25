@@ -3,17 +3,20 @@ server:
   error:
     include-message: always
 
-#spring:
-#  profiles:
-#    active: local
-
+# Local Profile
+spring:
   flyway:
+    url: jdbc:postgresql://localhost:5432/customer
+    user: elazazy
+    password: password
     schemas: public
     driver-class-name: org.postgresql.Driver
-
   datasource:
+    url: jdbc:postgresql://localhost:5432/customer
+    username: elazazy
+    password: password
+    schemas: public
     driver-class-name: org.postgresql.Driver
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -22,6 +25,37 @@ server:
       hibernate:
         format_sql: true
     show-sql: true
-
   main:
     web-application-type: servlet # This is the default value, so you can skip spring configuration
+
+---
+
+# Docker Profile
+spring:
+  config:
+    activate:
+      on-profile: docker
+  flyway:
+    url: jdbc:postgresql://db:5432/customer
+    user: elazazy
+    password: password
+  datasource:
+    url: jdbc:postgresql://db:5432/customer
+    username: elazazy
+    password: password
+
+---
+
+# Prod Profile
+spring:
+  config:
+    activate:
+      on-profile: aws
+  flyway:
+    url: jdbc:postgresql://awseb-e-5hwxfxnfjg-stack-awsebrdsdatabase-euezjcqxsqcb.cd42k4my8g1b.eu-central-1.rds.amazonaws.com:5432/customer
+    user: elazazy
+    password: password
+  datasource:
+    url: jdbc:postgresql://awseb-e-5hwxfxnfjg-stack-awsebrdsdatabase-euezjcqxsqcb.cd42k4my8g1b.eu-central-1.rds.amazonaws.com:5432/customer
+    username: elazazy
+    password: password
