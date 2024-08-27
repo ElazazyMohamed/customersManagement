@@ -38,7 +38,7 @@ jobs:
 
       - name: Slack Message - Start Deploying Backend
         run: >
-          curl && curl -X POST -H 'Content-type: application/json' 
+          curl -X POST -H 'Content-type: application/json' 
           --data '
             {"text":"Deployment Started :progress_bar:"}
           ' 
@@ -61,7 +61,7 @@ jobs:
 
       - name: Slack Message - Postgres Database Ready
         run: >
-          curl && curl -X POST -H 'Content-type: application/json' 
+          curl -X POST -H 'Content-type: application/json' 
           --data '
             {"text":" :postgresql: is :readybutton:"}
           ' 
@@ -82,7 +82,7 @@ jobs:
 
       - name: Slack Message - Image Pushed to Docker Hub
         run: >
-          curl && curl -X POST -H 'Content-type: application/json' 
+          curl -X POST -H 'Content-type: application/json' 
           --data '
             {"text":"Image pushed to :docker: hub with version ${{ steps.build-number.outputs.BUILD_NUMBER }}"}
           ' 
@@ -110,7 +110,7 @@ jobs:
 
       - name: Slack Message - Deployed to AWS
         run: >
-          curl && curl -X POST -H 'Content-type: application/json' 
+          curl -X POST -H 'Content-type: application/json' 
           --data '
             {"text":"Application deployed to :aws: Elastic Beanstalk"}
           ' 
@@ -126,7 +126,7 @@ jobs:
 
       - name: Slack Message - Deployment Completed
         run: >
-          curl && curl -X POST -H 'Content-type: application/json' 
+          curl -X POST -H 'Content-type: application/json' 
           --data '
             {"text":"Deployment Completed :done:"}
           ' 
@@ -135,7 +135,7 @@ jobs:
       - name: Send Error message
         if: always()
         run: >
-          curl && curl -X POST -H 'Content-type: application/json' 
+          curl -X POST -H 'Content-type: application/json' 
           --data '
             {"text":"Deployment Failed ${{ job.status }}"}
           ' 
