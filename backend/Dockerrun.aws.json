@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "elazazy-api",
-      "image": "elazazymohamed/elazazy-api:26.08.2024.22.25.33",
+      "image": "elazazymohamed/elazazy-api:27.08.2024.00.56.55",
       "essential": true,
       "memory": 512,
       "portMappings": [
