@@ -35,8 +35,10 @@ jobs:
     steps:
       - name: Slack Message - Start Deploying Backend
         run: >
-          curl -X POST -H 'Content-type: application/json' 
-          --data '{"text":"Deployment Started :progress_bar:"}' 
+          curl && curl -X POST -H 'Content-type: application/json' 
+          --data '
+            {"text":"Deployment Started :progress_bar:"}
+          ' 
           ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Checkout code
@@ -59,8 +61,10 @@ jobs:
 
       - name: Slack Message - Postgres Database Ready
         run: >
-          curl -X POST -H 'Content-type: application/json' 
-          --data '{"text":" :postgresql: is :readybutton:"}' 
+          curl && curl -X POST -H 'Content-type: application/json' 
+          --data '
+            {"text":" :postgresql: is :readybutton:"}
+          ' 
           ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Login to Docker Hub
@@ -78,8 +82,10 @@ jobs:
 
       - name: Slack Message - Image Pushed to Docker Hub
         run: >
-          curl -X POST -H 'Content-type: application/json' 
-          --data '{"text":"Image pushed to :docker: hub with version ${{ steps.build-number.outputs.BUILD_NUMBER }}"}' 
+          curl && curl -X POST -H 'Content-type: application/json' 
+          --data '
+            {"text":"Image pushed to :docker: hub with version ${{ steps.build-number.outputs.BUILD_NUMBER }}"}
+          ' 
           ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Update Dockerrun.aws.json api tag with new build number
@@ -104,8 +110,10 @@ jobs:
 
       - name: Slack Message - Deployed to AWS
         run: >
-          curl -X POST -H 'Content-type: application/json' 
-          --data '{"text":"Application deployed to :aws: Elastic Beanstalk"}' 
+          curl && curl -X POST -H 'Content-type: application/json' 
+          --data '
+            {"text":"Application deployed to :aws: Elastic Beanstalk"}
+          ' 
           ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Commit and push Dockerrun.aws.json
@@ -118,13 +126,17 @@ jobs:
 
       - name: Slack Message - Deployment Completed
         run: >
-          curl -X POST -H 'Content-type: application/json' 
-          --data '{"text":"Deployment Completed :done:"}' 
+          curl && curl -X POST -H 'Content-type: application/json' 
+          --data '
+            {"text":"Deployment Completed :done:"}
+          ' 
           ${{ secrets.SLACK_WEBHOOK_URL }}
           
       - name: Send Error message
         if: always()
         run: >
-          curl -X POST -H 'Content-type: application/json' 
-          --data '{"text":"Deployment Failed ${{ job.status }}"}' 
+          curl && curl -X POST -H 'Content-type: application/json' 
+          --data '
+            {"text":"Deployment Failed ${{ job.status }}"}
+          ' 
           ${{ secrets.SLACK_WEBHOOK_URL }}
