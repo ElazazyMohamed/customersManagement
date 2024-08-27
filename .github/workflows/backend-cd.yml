@@ -33,6 +33,9 @@ jobs:
         working-directory: ./backend
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: Slack Message - Start Deploying Backend
         run: >
           curl && curl -X POST -H 'Content-type: application/json' 
@@ -40,9 +43,6 @@ jobs:
             {"text":"Deployment Started :progress_bar:"}
           ' 
           ${{ secrets.SLACK_WEBHOOK_URL }}
-
-      - name: Checkout code
-        uses: actions/checkout@v3
 
       - name: Setup Java
         uses: actions/setup-java@v3
