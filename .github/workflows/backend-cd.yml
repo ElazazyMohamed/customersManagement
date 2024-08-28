@@ -132,11 +132,11 @@ jobs:
           ' 
           ${{ secrets.SLACK_WEBHOOK_URL }}
           
-      - name: Send Error message
+      - name: Deployment Status
         if: always()
         run: >
           curl -X POST -H 'Content-type: application/json' 
           --data '
-            {"text":"Deployment Failed ${{ job.status }}"}
+            {"text":"Deployment ${{ job.status }}"}
           ' 
           ${{ secrets.SLACK_WEBHOOK_URL }}
