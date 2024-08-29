@@ -3,6 +3,10 @@ server:
   error:
     include-message: always
 
+cors:
+  allowed-origins: "*"
+  allowed-methods: "*"
+
 # Local Profile
 spring:
   flyway:

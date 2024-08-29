@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f7336cd9-812a-4009-8108-efddd12a6172" name="Changes" comment="Getting Ready for CD">
       <change beforePath="$PROJECT_DIR$/.github/workflows/backend-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/backend-cd.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/PingPongController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/PingPongController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/src/main.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +83,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mohamed\Downloads\Amigoscode\customersManagement\frontend\react\src\components" />
       <recent name="C:\Users\Mohamed\Downloads\Amigoscode\customersManagement" />
       <recent name="C:\Users\Mohamed\Downloads\Amigoscode\customersManagement\backend" />
     </key>
@@ -148,7 +152,11 @@
       <option name="presentableId" value="Default" />
       <updated>1724365344924</updated>
       <workItem from="1724365345961" duration="3117000" />
-      <workItem from="1724802872298" duration="1983000" />
+      <workItem from="1724802872298" duration="4412000" />
+      <workItem from="1724869946238" duration="16124000" />
+      <workItem from="1724929591224" duration="11662000" />
+      <workItem from="1724966735522" duration="19000" />
+      <workItem from="1724966774646" duration="1423000" />
     </task>
     <servers />
   </component>
