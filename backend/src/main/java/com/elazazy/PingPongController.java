@@ -14,4 +14,3 @@ public class PingPongController {
         return new PingPong("Pong: " + ++COUNTER);
     }
 }
-
