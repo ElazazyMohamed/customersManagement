@@ -5,12 +5,10 @@ import com.elazazy.exception.ResourceNotFoundException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;
 
@@ -52,7 +50,7 @@ class CustomerServiceTest {
 
         // Given
         Long id = 10L;
-        Customer customer = new Customer(id, "name", "name@gmail.com", 20);
+        Customer customer = new Customer(id, "name", "name@gmail.com", 20, Gender.Male);
         Mockito.when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
 
         // When
@@ -84,7 +82,7 @@ class CustomerServiceTest {
         String email = "name@gmail.com";
         when(customerDao.existsPersonByEmail(email)).thenReturn(false);
         CustomerRegistrationRequest request = new CustomerRegistrationRequest(
-                "name", email, 20
+                "name", email, 20, Gender.Male
         );
 
         // When
@@ -107,7 +105,7 @@ class CustomerServiceTest {
         String email = "name@gmail.com";
         when(customerDao.existsPersonByEmail(email)).thenReturn(true);
         CustomerRegistrationRequest request = new CustomerRegistrationRequest(
-                "name", email, 20
+                "name", email, 20, Gender.Male
         );
 
         // When

@@ -39,7 +39,8 @@ public class CustomerService {
                 new Customer(
                         customerRegistrationRequest.name(),
                         customerRegistrationRequest.email(),
-                        customerRegistrationRequest.age()
+                        customerRegistrationRequest.age(),
+                        customerRegistrationRequest.gender()
                 )
         );
     }
@@ -57,6 +58,7 @@ public class CustomerService {
         String newCustomerName = customerUpdateRequest.name();
         String newCustomerEmail = customerUpdateRequest.email();
         Integer newCustomerAge = customerUpdateRequest.age();
+        Gender newCustomerGender = customerUpdateRequest.gender();
         boolean change = false;
         // check name
         if (newCustomerName != null && !newCustomerName.isEmpty()) {
@@ -84,6 +86,13 @@ public class CustomerService {
             }
             change = true;
             customer.setAge(newCustomerAge);
+        }
+        if(newCustomerGender != null) {
+            if (newCustomerGender.equals(customer.getGender())) {
+                throw new RequestValidationException("Gender already taken");
+            }
+            change = true;
+            customer.setGender(newCustomerGender);
         }
         if (!change) {
             throw new RequestValidationException("No field to update");

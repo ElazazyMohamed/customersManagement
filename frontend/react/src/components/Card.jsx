@@ -13,7 +13,9 @@ import {
     useColorModeValue,
 } from '@chakra-ui/react'
 
-export default function CardWithImage({ id, name, email, age }) {
+export default function CardWithImage({ id, name, email, age, gender, imageNumber }) {
+    const randomUserGender = gender === 'Male' ? 'men' : 'women';
+
     return (
         <Center py={6}>
             <Box
@@ -27,7 +29,7 @@ export default function CardWithImage({ id, name, email, age }) {
                 <Avatar
                     size={'xl'}
                     src={
-                        'https://images.unsplash.com/photo-1520810627419-35e362c5dc07?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ'
+                        `https://randomuser.me/api/portraits/${randomUserGender}/${imageNumber}.jpg`
                     }
                     mb={4}
                     pos={'relative'}
@@ -54,33 +56,26 @@ export default function CardWithImage({ id, name, email, age }) {
                     textAlign={'center'}
                     color={useColorModeValue('gray.700', 'gray.400')}
                     px={3}>
-                    My name is {name} and I am {age} years old. You can reach me on:
+                    My name is {name}. You can reach me on:
                     <Text color={'blue.400'}>{email}</Text>
                 </Text>
 
-                <Stack align={'center'} justify={'center'} direction={'row'} mt={6}>
+                {/*<Stack align={'center'} justify={'center'} direction={'row'} mt={6}>*/}
+                {/*    <Badge*/}
+                {/*        px={2}*/}
+                {/*        py={1}*/}
+                {/*        bg={useColorModeValue('gray.50', 'gray.800')}*/}
+                {/*        fontWeight={'400'}>*/}
+                {/*        gender: {gender}*/}
+                {/*    </Badge>*/}
                     <Badge
                         px={2}
                         py={1}
                         bg={useColorModeValue('gray.50', 'gray.800')}
                         fontWeight={'400'}>
-                        ID: {id}
+                        Age: {age} | {gender}
                     </Badge>
-                    <Badge
-                        px={2}
-                        py={1}
-                        bg={useColorModeValue('gray.50', 'gray.800')}
-                        fontWeight={'400'}>
-                        Name: {name}
-                    </Badge>
-                    <Badge
-                        px={2}
-                        py={1}
-                        bg={useColorModeValue('gray.50', 'gray.800')}
-                        fontWeight={'400'}>
-                        Age: {age}
-                    </Badge>
-                </Stack>
+                {/*</Stack>*/}
 
                 <Stack mt={8} direction={'row'} spacing={4}>
                     <Button
