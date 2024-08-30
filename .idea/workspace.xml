@@ -6,20 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f7336cd9-812a-4009-8108-efddd12a6172" name="Changes" comment="Test New Environment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerJDBCDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerJDBCDataAccessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerRegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerRegistrationRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerRowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerRowMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerUpdateRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/elazazy/customer/CustomerJDBCDataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/elazazy/customer/CustomerJDBCDataAccessServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/elazazy/customer/CustomerRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/elazazy/customer/CustomerRowMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/elazazy/customer/CustomerRowMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/elazazy/customer/CustomerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/elazazy/customer/CustomerServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/elazazy/journey/CustomerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/elazazy/journey/CustomerIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/react/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/react/src/components/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/src/components/Card.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +171,7 @@
       <workItem from="1724869946238" duration="16124000" />
       <workItem from="1724929591224" duration="11662000" />
       <workItem from="1724966735522" duration="19000" />
-      <workItem from="1724966774646" duration="15092000" />
+      <workItem from="1724966774646" duration="15748000" />
     </task>
     <task id="LOCAL-00001" summary="Send slack msg with commit msg and sha to CD Workflow">
       <option name="closed" value="true" />
