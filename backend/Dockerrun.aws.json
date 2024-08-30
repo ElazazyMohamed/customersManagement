@@ -16,18 +16,6 @@
         {
           "name": "SPRING_PROFILES_ACTIVE",
           "value": "aws"
-        },
-        {
-          "name": "SPRING_DATASOURCE_URL",
-          "value": "jdbc:postgresql://awseb-e-5hwxfxnfjg-stack-awsebrdsdatabase-euezjcqxsqcb.cd42k4my8g1b.eu-central-1.rds.amazonaws.com:5432/customer"
-        },
-        {
-          "name": "SPRING_DATASOURCE_USERNAME",
-          "value": "elazazy"
-        },
-        {
-          "name": "SPRING_DATASOURCE_PASSWORD",
-          "value": "password"
         }
       ]
     }
