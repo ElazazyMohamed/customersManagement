@@ -86,7 +86,7 @@ const NavItem = ({ icon, children, ...rest }) => {
                 role="group"
                 cursor="pointer"
                 _hover={{
-                    bg: 'cyan.400',
+                    bg: 'blue.400',
                     color: 'white',
                 }}
                 {...rest}>
@@ -143,7 +143,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                                 <Avatar
                                     size={'sm'}
                                     src={
-                                        'https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
+                                        'https://avatars.githubusercontent.com/u/109857017?s=400&u=97607be815aa35b7a816800a256dfd66721af711&v=4'
                                     }
                                 />
                                 <VStack
@@ -151,7 +151,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                                     alignItems="flex-start"
                                     spacing="1px"
                                     ml="2">
-                                    <Text fontSize="sm">Justina Clark</Text>
+                                    <Text fontSize="sm">Mohamed Elazazy</Text>
                                     <Text fontSize="xs" color="gray.600">
                                         Admin
                                     </Text>

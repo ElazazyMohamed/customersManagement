@@ -1,5 +1,4 @@
 'use client'
-
 import {
     Heading,
     Avatar,
@@ -11,10 +10,24 @@ import {
     Badge,
     Tag,
     useColorModeValue,
+    useDisclosure,
 } from '@chakra-ui/react'
+import MyAlertDialog from "./shared/MyAlertDialog.jsx";
+import DrawerForm from "./DrawerForm.jsx";
 
-export default function CardWithImage({ id, name, email, age, gender, imageNumber }) {
+const CardWithImage = ({
+    id,
+    name,
+    email,
+    age,
+    gender,
+    imageNumber,
+    fetchCustomers,
+}) => {
     const randomUserGender = gender === 'Male' ? 'men' : 'women';
+
+    // Update Customer Drawer
+    const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
         <Center py={6}>
@@ -25,12 +38,11 @@ export default function CardWithImage({ id, name, email, age, gender, imageNumbe
                 boxShadow={'2xl'}
                 rounded={'lg'}
                 p={6}
-                textAlign={'center'}>
+                textAlign={'center'}
+            >
                 <Avatar
                     size={'xl'}
-                    src={
-                        `https://randomuser.me/api/portraits/${randomUserGender}/${imageNumber}.jpg`
-                    }
+                    src={`https://randomuser.me/api/portraits/${randomUserGender}/${imageNumber}.jpg`}
                     mb={4}
                     pos={'relative'}
                     _after={{
@@ -55,57 +67,46 @@ export default function CardWithImage({ id, name, email, age, gender, imageNumbe
                 <Text
                     textAlign={'center'}
                     color={useColorModeValue('gray.700', 'gray.400')}
-                    px={3}>
+                    px={3}
+                >
                     My name is {name}. You can reach me on:
                     <Text color={'blue.400'}>{email}</Text>
                 </Text>
-
-                {/*<Stack align={'center'} justify={'center'} direction={'row'} mt={6}>*/}
-                {/*    <Badge*/}
-                {/*        px={2}*/}
-                {/*        py={1}*/}
-                {/*        bg={useColorModeValue('gray.50', 'gray.800')}*/}
-                {/*        fontWeight={'400'}>*/}
-                {/*        gender: {gender}*/}
-                {/*    </Badge>*/}
-                    <Badge
-                        px={2}
-                        py={1}
-                        bg={useColorModeValue('gray.50', 'gray.800')}
-                        fontWeight={'400'}>
-                        Age: {age} | {gender}
-                    </Badge>
-                {/*</Stack>*/}
-
+                <Badge
+                    px={2}
+                    py={1}
+                    bg={useColorModeValue('gray.50', 'gray.800')}
+                    fontWeight={'400'}
+                >
+                    Age: {age} | {gender}
+                </Badge>
                 <Stack mt={8} direction={'row'} spacing={4}>
+                    <MyAlertDialog
+                        id={id}
+                        name={name}
+                        fetchCustomers={fetchCustomers}
+                    />
                     <Button
+                        colorScheme="blue"
                         flex={1}
                         fontSize={'sm'}
                         rounded={'full'}
-                        _focus={{
-                            bg: 'gray.200',
-                        }}>
-                        Message
+                        onClick={onOpen}
+                    >
+                        Update
                     </Button>
-                    <Button
-                        flex={1}
-                        fontSize={'sm'}
-                        rounded={'full'}
-                        bg={'blue.400'}
-                        color={'white'}
-                        boxShadow={
-                            '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
-                        }
-                        _hover={{
-                            bg: 'blue.500',
-                        }}
-                        _focus={{
-                            bg: 'blue.500',
-                        }}>
-                        Follow
-                    </Button>
+                    <DrawerForm
+                        formType={"update"}
+                        isOpen={isOpen}
+                        onClose={onClose}
+                        id={id}
+                        initialValues={{ name, email, age, gender }}
+                        fetchCustomers={fetchCustomers}
+                    />
                 </Stack>
             </Box>
         </Center>
-    )
+    );
 }
+
+export default CardWithImage;
