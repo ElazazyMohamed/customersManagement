@@ -60,40 +60,36 @@ public class CustomerService {
         Integer newCustomerAge = customerUpdateRequest.age();
         Gender newCustomerGender = customerUpdateRequest.gender();
         boolean change = false;
+
         // check name
-        if (newCustomerName != null && !newCustomerName.isEmpty()) {
-            if (newCustomerName.equals(customer.getName())) {
-                throw new RequestValidationException("Name already taken");
-            }
-            change = true;
+        if (newCustomerName != null && !newCustomerName.isEmpty() &&
+                !newCustomerName.equals(customer.getName())) {
             customer.setName(newCustomerName);
+            change = true;
         }
+
         // check email
-        if (newCustomerEmail != null && !newCustomerEmail.isEmpty()) {
-            if (customerDao.existsPersonByEmail(newCustomerEmail)) {
+        if (newCustomerEmail != null && !newCustomerEmail.isEmpty() &&
+                !newCustomerEmail.equals(customer.getEmail())) {
+            if (customerDao.existsPersonByEmail(customerUpdateRequest.email())) {
                 throw new DuplicateResourceException("Email already taken");
             }
-            if (newCustomerEmail.equals(customer.getEmail())) {
-                throw new RequestValidationException("Email already taken");
-            }
-            change = true;
             customer.setEmail(newCustomerEmail);
+            change = true;
         }
+
         // check age
-        if (newCustomerAge != null) {
-            if (newCustomerAge.equals(customer.getAge())) {
-                throw new RequestValidationException("Age already taken");
-            }
-            change = true;
+        if (newCustomerAge != null && !newCustomerAge.equals(customer.getAge())) {
             customer.setAge(newCustomerAge);
-        }
-        if(newCustomerGender != null) {
-            if (newCustomerGender.equals(customer.getGender())) {
-                throw new RequestValidationException("Gender already taken");
-            }
             change = true;
-            customer.setGender(newCustomerGender);
         }
+
+        // check gender
+        if (newCustomerGender != null && !newCustomerGender.equals(customer.getGender())) {
+            customer.setGender(newCustomerGender);
+            change = true;
+        }
+
         if (!change) {
             throw new RequestValidationException("No field to update");
         }
