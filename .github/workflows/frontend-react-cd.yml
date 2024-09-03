@@ -47,7 +47,13 @@ jobs:
         run: echo "BUILD_NUMBER=$(date '+%d.%m.%Y.%H.%M.%S')" >> $GITHUB_OUTPUT
 
       - name: Build and Push Docker Image
-        run: docker build --build-arg api_base_url=${{ secrets.API_BASE_URL }} --platform linux/arm64 -t ${{secrets.DOCKERHUB_USERNAME}}/elazazy-react --push .
+        run: |
+          docker buildx build \
+            --build-arg api_base_url=${{ secrets.API_BASE_URL }} \
+            --platform linux/amd64,linux/arm64 \
+            -t ${{ secrets.DOCKERHUB_USERNAME }}/elazazy-react:${{ steps.build-number.outputs.BUILD_NUMBER }} \
+            -t ${{ secrets.DOCKERHUB_USERNAME }}/elazazy-react:latest \
+            --push .
 
       - name: Slack Message - Image Built & Pushed to Docker Hub
         run: >
