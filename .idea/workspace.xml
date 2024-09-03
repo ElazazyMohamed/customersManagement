@@ -7,7 +7,6 @@
     <list default="true" id="f7336cd9-812a-4009-8108-efddd12a6172" name="Changes" comment="Frontend CD Final">
       <change beforePath="$PROJECT_DIR$/.github/workflows/frontend-react-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/frontend-react-cd.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/react/.env" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/.env" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +178,7 @@
       <workItem from="1725114948508" duration="1869000" />
       <workItem from="1725145571252" duration="30009000" />
       <workItem from="1725234969375" duration="13840000" />
-      <workItem from="1725307825816" duration="17121000" />
+      <workItem from="1725307825816" duration="17307000" />
     </task>
     <task id="LOCAL-00001" summary="Send slack msg with commit msg and sha to CD Workflow">
       <option name="closed" value="true" />
@@ -245,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725328417709</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Frontend CD Final">
+      <option name="closed" value="true" />
+      <created>1725360147271</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1725360147271</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
