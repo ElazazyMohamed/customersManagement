@@ -179,7 +179,7 @@
       <workItem from="1725114948508" duration="1869000" />
       <workItem from="1725145571252" duration="30009000" />
       <workItem from="1725234969375" duration="13840000" />
-      <workItem from="1725307825816" duration="20937000" />
+      <workItem from="1725307825816" duration="21118000" />
     </task>
     <task id="LOCAL-00001" summary="Send slack msg with commit msg and sha to CD Workflow">
       <option name="closed" value="true" />
