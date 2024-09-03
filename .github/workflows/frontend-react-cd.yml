@@ -11,7 +11,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: unbuntu-latest
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./frontend/react

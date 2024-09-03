@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7336cd9-812a-4009-8108-efddd12a6172" name="Changes" comment="Frontend CD Final" />
+    <list default="true" id="f7336cd9-812a-4009-8108-efddd12a6172" name="Changes" comment="Frontend CD Final">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/frontend-react-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/frontend-react-cd.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,7 +178,7 @@
       <workItem from="1725114948508" duration="1869000" />
       <workItem from="1725145571252" duration="30009000" />
       <workItem from="1725234969375" duration="13840000" />
-      <workItem from="1725307825816" duration="14873000" />
+      <workItem from="1725307825816" duration="14985000" />
     </task>
     <task id="LOCAL-00001" summary="Send slack msg with commit msg and sha to CD Workflow">
       <option name="closed" value="true" />
