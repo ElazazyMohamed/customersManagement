@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "elazazy-react",
-      "image": "elazazymohamed/elazazy-react:latest",
+      "image": "elazazymohamed/elazazy-react:03.09.2024.13.51.30",
       "essential": true,
       "memory": 256,
       "portMappings": [
