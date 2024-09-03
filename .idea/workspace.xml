@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7336cd9-812a-4009-8108-efddd12a6172" name="Changes" comment="Add Drawer, Dialog, Notifications, Form, Formik, YUP">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/backend-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/backend-cd.yml" afterDir="false" />
+    <list default="true" id="f7336cd9-812a-4009-8108-efddd12a6172" name="Changes" comment="Frontend CD">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Dockerrun.aws.json" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerrun.aws.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +179,7 @@
       <workItem from="1725114948508" duration="1869000" />
       <workItem from="1725145571252" duration="30009000" />
       <workItem from="1725234969375" duration="13840000" />
-      <workItem from="1725307825816" duration="13968000" />
+      <workItem from="1725307825816" duration="14838000" />
     </task>
     <task id="LOCAL-00001" summary="Send slack msg with commit msg and sha to CD Workflow">
       <option name="closed" value="true" />
@@ -231,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725240316441</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Frontend CD">
+      <option name="closed" value="true" />
+      <created>1725326753880</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1725326753880</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +251,7 @@
     <MESSAGE value="Test New Environment" />
     <MESSAGE value="Fix Logic with Update Customer Method" />
     <MESSAGE value="Add Drawer, Dialog, Notifications, Form, Formik, YUP" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Drawer, Dialog, Notifications, Form, Formik, YUP" />
+    <MESSAGE value="Frontend CD" />
+    <option name="LAST_COMMIT_MESSAGE" value="Frontend CD" />
   </component>
 </project>
