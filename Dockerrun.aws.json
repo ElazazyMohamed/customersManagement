@@ -15,7 +15,7 @@
     },
     {
       "name": "elazazy-api",
-      "image": "elazazymohamed/elazazy-api:02.09.2024.00.58.29",
+      "image": "elazazymohamed/elazazy-api:03.09.2024.01.26.33",
       "essential": true,
       "memory": 512,
       "portMappings": [
