@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7336cd9-812a-4009-8108-efddd12a6172" name="Changes" comment="Fix Logic with Update Customer Method">
+    <list default="true" id="f7336cd9-812a-4009-8108-efddd12a6172" name="Changes" comment="Add Drawer, Dialog, Notifications, Form, Formik, YUP">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/backend-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/backend-cd.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/react/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Dockerrun.aws.json" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerrun.aws.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/react/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/react/src/components/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/src/components/CardWithImage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/react/src/components/shared/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/src/components/shared/SideBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/react/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/react/src/services/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/src/services/client.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,8 +85,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Mohamed\Downloads\Amigoscode\customersManagement\frontend\react\src\components" />
       <recent name="C:\Users\Mohamed\Downloads\Amigoscode\customersManagement" />
+      <recent name="C:\Users\Mohamed\Downloads\Amigoscode\customersManagement\frontend\react\src\components" />
       <recent name="C:\Users\Mohamed\Downloads\Amigoscode\customersManagement\backend" />
     </key>
   </component>
@@ -183,7 +180,8 @@
       <workItem from="1725059436036" duration="8390000" />
       <workItem from="1725114948508" duration="1869000" />
       <workItem from="1725145571252" duration="30009000" />
-      <workItem from="1725234969375" duration="4692000" />
+      <workItem from="1725234969375" duration="13840000" />
+      <workItem from="1725307825816" duration="13968000" />
     </task>
     <task id="LOCAL-00001" summary="Send slack msg with commit msg and sha to CD Workflow">
       <option name="closed" value="true" />
@@ -225,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725238662605</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add Drawer, Dialog, Notifications, Form, Formik, YUP">
+      <option name="closed" value="true" />
+      <created>1725240316441</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1725240316441</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,6 +244,7 @@
     <MESSAGE value="Terminated Previous Application and Deployed New One" />
     <MESSAGE value="Test New Environment" />
     <MESSAGE value="Fix Logic with Update Customer Method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Logic with Update Customer Method" />
+    <MESSAGE value="Add Drawer, Dialog, Notifications, Form, Formik, YUP" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Drawer, Dialog, Notifications, Form, Formik, YUP" />
   </component>
 </project>

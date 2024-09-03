@@ -1,4 +1,4 @@
-name: CD - Deploy Backend
+name: CD - Deploy React Frontend
 
 on:
   workflow_dispatch:
@@ -7,72 +7,33 @@ on:
     branches:
       - main
     paths:
-      - 'backend/**'
+      - 'frontend/react/**'
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-
-    services:
-      postgres:
-        image: postgres:16.3
-        env:
-          POSTGRES_USER: elazazy
-          POSTGRES_PASSWORD: password
-          POSTGRES_DB: customer
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
+    runs-on: unbuntu-latest
     defaults:
       run:
-        working-directory: ./backend
+        working-directory: ./frontend/react
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Slcak Commit message and sha
+      - name: Slack Commit message and sha
         run: >
-          curl -X POST -H 'Content-type: application/json' 
+          curl -X POST -H 'Content-type: application/json'
           --data '
             {"text":"${{github.sha}} - ${{github.event.head_commit.message}}"}
-          ' 
+          '
           ${{ secrets.SLACK_WEBHOOK_URL }}
 
-      - name: Slack Message - Start Deploying Backend
+      - name: Slack Message - Start Deploying Frontend
         run: >
-          curl -X POST -H 'Content-type: application/json' 
+          curl -X POST -H 'Content-type: application/json'
           --data '
             {"text":"Deployment Started :progress_bar:"}
-          ' 
-          ${{ secrets.SLACK_WEBHOOK_URL }}
-
-      - name: Setup Java
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-          cache: 'maven'
-
-      - name: Wait for Postgres to be Ready
-        run: |
-          echo "Waiting for PostgreSQL to be ready..."
-          until pg_isready -h localhost  -p 5432 -U elazazy; do
-            echo "Waiting for database...";
-            sleep 5;
-          done
-
-      - name: Slack Message - Postgres Database Ready
-        run: >
-          curl -X POST -H 'Content-type: application/json' 
-          --data '
-            {"text":" :postgresql: is :readybutton:"}
-          ' 
+          '
           ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Login to Docker Hub
@@ -85,10 +46,10 @@ jobs:
         id: build-number
         run: echo "BUILD_NUMBER=$(date '+%d.%m.%Y.%H.%M.%S')" >> $GITHUB_OUTPUT
 
-      - name: Build Package Push with Maven
-        run: mvn -ntp -B verify -Ddocker.image.tag=${{ steps.build-number.outputs.BUILD_NUMBER }} jib:build
+      - name: Build and Push Docker Image
+        run: docker build --build-arg api_base_url=${{ secrets.API_BASE_URL }} --platform linux/arm64 -t ${{secrets.DOCKERHUB_USERNAME}}/elazazy-react --push .
 
-      - name: Slack Message - Image Pushed to Docker Hub
+      - name: Slack Message - Image Built & Pushed to Docker Hub
         run: >
           curl -X POST -H 'Content-type: application/json' 
           --data '
@@ -100,7 +61,7 @@ jobs:
         run: |
           echo "Dockerrun.aws.json before updating tag"
           cat ../Dockerrun.aws.json
-          sed -i -E 's_(elazazymohamed/elazazy-api:)([^"]*)_\1'${{ steps.build-number.outputs.BUILD_NUMBER }}'_' ../Dockerrun.aws.json
+          sed -i -E 's_(elazazymohamed/elazazy-react:)([^"]*)_\1'${{ steps.build-number.outputs.BUILD_NUMBER }}'_' ../Dockerrun.aws.json
           echo "Dockerrun.aws.json after updating tag"
           cat ../Dockerrun.aws.json
 
@@ -115,6 +76,7 @@ jobs:
           version_label: ${{ steps.build-number.outputs.BUILD_NUMBER }}
           version_description: ${{ github.SHA }}
           deployment_package: Dockerrun.aws.json
+          wait_for_environment_recovery: 60
 
       - name: Slack Message - Deployed to AWS
         run: >
@@ -139,7 +101,7 @@ jobs:
             {"text":"Deployment Completed :done:"}
           ' 
           ${{ secrets.SLACK_WEBHOOK_URL }}
-          
+
       - name: Deployment Status
         if: always()
         run: >

@@ -26,9 +26,24 @@ services:
 #      SPRING_DATASOURCE_PASSWORD: password
     ports:
       - "8080:8080"
+    depends_on:
+      - db
     networks:
       - db
+    restart: unless-stopped
+
+  elazazy-react:
+    container_name: elazazy-react
+    image: elazazymohamed/elazazy-react
+    build:
+      context: frontend/react
+      args:
+        api_base_url: http://localhost:8080  # Pass the build argument
+    ports:
+      - "3000:5173"
     depends_on:
+      - web
+    networks:
       - db
     restart: unless-stopped
 
