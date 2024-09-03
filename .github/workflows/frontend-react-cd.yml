@@ -76,10 +76,10 @@ jobs:
       - name: Update Dockerrun.aws.json api tag with new build number
         run: |
           echo "Dockerrun.aws.json before updating tag"
-          cat ../Dockerrun.aws.json
-          sed -i -E 's_(elazazymohamed/elazazy-react:)([^"]*)_\1'${{ steps.build-number.outputs.BUILD_NUMBER }}'_' ../Dockerrun.aws.json
+          cat ../../Dockerrun.aws.json
+          sed -i -E 's_(elazazymohamed/elazazy-react:)([^"]*)_\1'${{ steps.build-number.outputs.BUILD_NUMBER }}'_' ../../Dockerrun.aws.json
           echo "Dockerrun.aws.json after updating tag"
-          cat ../Dockerrun.aws.json
+          cat ../../Dockerrun.aws.json
 
       - name: Deploy to Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v22
@@ -91,7 +91,7 @@ jobs:
           environment_name: ${{ secrets.EB_ENVIRONMENT_NAME }}
           version_label: ${{ steps.build-number.outputs.BUILD_NUMBER }}
           version_description: ${{ github.SHA }}
-          deployment_package: Dockerrun.aws.json
+          deployment_package: ../../Dockerrun.aws.json
           wait_for_environment_recovery: 60
 
       - name: Slack Message - Deployed to AWS
@@ -106,11 +106,11 @@ jobs:
         run: |
           git config user.name github-actions 
           git config user.email github-actions@github.com
-          git add ../Dockerrun.aws.json
+          git add ../../Dockerrun.aws.json
           git commit -m "Update Dockerrun.aws.json docker image with new tag ${{ steps.build-number.outputs.BUILD_NUMBER }}"
           git push
 
-      - name: Slack Message - Deployment Completed
+      - name: Slack Message - Deployment sCompleted
         run: >
           curl -X POST -H 'Content-type: application/json' 
           --data '
