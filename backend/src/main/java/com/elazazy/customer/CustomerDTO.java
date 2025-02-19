@@ -1,9 +1,11 @@
 package com.elazazy.customer;
 
-public record CustomerRegistrationRequest(
+public record CustomerDTO(
+        Long id,
         String name,
         String email,
-        String password,
         Integer age,
         Gender gender
-) {}
+) {
+
+}

@@ -4,24 +4,38 @@ import com.elazazy.exception.DuplicateResourceException;
 import com.elazazy.exception.RequestValidationException;
 import com.elazazy.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CustomerService {
     private final CustomerDao customerDao;
+    private final PasswordEncoder passwordEncoder;
+    private final CustomerDTOMapper customerDTOMapper;
 
-    public CustomerService(@Qualifier("jdbc") CustomerDao customerDao) {
+    public CustomerService(
+            @Qualifier("jdbc") CustomerDao customerDao,
+            CustomerDTOMapper customerDTOMapper,
+            PasswordEncoder passwordEncoder
+    ) {
         this.customerDao = customerDao;
+        this.customerDTOMapper = customerDTOMapper;
+        this.passwordEncoder = passwordEncoder;
     }
 
-    public List<Customer> getAllCustomers() {
-        return customerDao.selectAllCustomers();
+    public List<CustomerDTO> getAllCustomers() {
+        return customerDao.selectAllCustomers()
+                .stream()
+                .map(customerDTOMapper)
+                .collect(Collectors.toList());
     }
 
-    public Customer getCustomer(Long id) {
+    public CustomerDTO getCustomer(Long id) {
         return customerDao.selectCustomerById(id)
+                .map(customerDTOMapper)
                 .orElseThrow(() ->
                         new ResourceNotFoundException(
                                 "Customer with id " + id + " does not exist"
@@ -39,6 +53,7 @@ public class CustomerService {
                 new Customer(
                         customerRegistrationRequest.name(),
                         customerRegistrationRequest.email(),
+                        passwordEncoder.encode(customerRegistrationRequest.password()),
                         customerRegistrationRequest.age(),
                         customerRegistrationRequest.gender()
                 )
@@ -54,9 +69,16 @@ public class CustomerService {
     }
 
     public void updateCustomer(Long customerId, CustomerUpdateRequest customerUpdateRequest) {
-        Customer customer = customerDao.selectCustomerById(customerId).orElseThrow(() -> new ResourceNotFoundException("Customer with id " + customerId + " does not exist"));
+//        Customer customer = customerDao.selectCustomerById(customerId).orElseThrow(() -> new ResourceNotFoundException("Customer with id " + customerId + " does not exist"));
+        Customer customer = customerDao.selectCustomerById(customerId)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Customer with id " + customerId + " does not exist"
+                        )
+                );
         String newCustomerName = customerUpdateRequest.name();
         String newCustomerEmail = customerUpdateRequest.email();
+        String newCustomerPassword = customerUpdateRequest.password();
         Integer newCustomerAge = customerUpdateRequest.age();
         Gender newCustomerGender = customerUpdateRequest.gender();
         boolean change = false;
@@ -75,6 +97,13 @@ public class CustomerService {
                 throw new DuplicateResourceException("Email already taken");
             }
             customer.setEmail(newCustomerEmail);
+            change = true;
+        }
+
+        // check password
+        if (newCustomerPassword != null && !newCustomerPassword.isEmpty() &&
+                !newCustomerPassword.equals(customer.getPassword())) {
+            customer.setPassword(passwordEncoder.encode(newCustomerPassword));
             change = true;
         }
 

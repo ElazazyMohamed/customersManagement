@@ -4,10 +4,53 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7336cd9-812a-4009-8108-efddd12a6172" name="Changes" comment="Frontend CD Final 2">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/frontend-react-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/frontend-react-cd.yml" afterDir="false" />
+    <list default="true" id="f7336cd9-812a-4009-8108-efddd12a6172" name="Changes" comment="Adding JWT Auth &amp; Security">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/auth/AuthenticationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/auth/AuthenticationRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/auth/AuthenticationResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/auth/AuthenticationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerDTOMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/exception/ApiError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/exception/DefaultExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/exception/DelegatedAuthEntryPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/jwt/JWTAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/jwt/JWTUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/security/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/security/SecurityFilterChainConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/elazazy/journey/AuthenticationIT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerrun.aws.json" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerrun.aws.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/config/WebMvcConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerJDBCDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerJDBCDataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerRegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerRegistrationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerRowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerRowMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/elazazy/customer/CustomerUpdateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V1__Initial_Setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V1__Initial_Setup.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V2__Add_Gender_Enum_To_Customer.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/elazazy/customer/CustomerJDBCDataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/elazazy/customer/CustomerJDBCDataAccessServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/elazazy/customer/CustomerRowMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/elazazy/customer/CustomerRowMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/elazazy/customer/CustomerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/elazazy/customer/CustomerServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/elazazy/journey/CustomerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/elazazy/journey/CustomerIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react/src/components/CardWithImage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/src/components/customer/CardWithImage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react/src/components/CustomerForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/src/components/shared/CustomerForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react/src/components/DrawerForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/src/components/customer/DrawerForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react/src/components/shared/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/src/components/shared/SideBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/react/src/services/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/react/src/services/client.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +60,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Record" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+        <option value="JSX File" />
       </list>
     </option>
   </component>
@@ -53,8 +99,15 @@
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-compose.yml.db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthenticationIT.canLogin.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthenticationIT.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerIntegrationTest.canDeleteACustomer.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerIntegrationTest.canRegisterACustomer.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerIntegrationTest.canUpdateACustomer.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerServiceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.customer in elazazy-api.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.elazazy in elazazy-api.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.java in elazazy-api.executor&quot;: &quot;Run&quot;,
     &quot;Maven.elazazy-api [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.elazazy-api [com.google.cloud.tools:jib-maven-plugin:3.3.1:build].executor&quot;: &quot;Run&quot;,
     &quot;Maven.elazazy-api [package].executor&quot;: &quot;Run&quot;,
@@ -63,8 +116,12 @@
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.Main.executor&quot;: &quot;Run&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -77,35 +134,86 @@
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Mohamed\\AppData\\Local\\Programs\\IntelliJ IDEA Ultimate\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mohamed\Downloads\Amigoscode\customersManagement\frontend\react\src\components\shared" />
+      <recent name="C:\Users\Mohamed\Downloads\Amigoscode\customersManagement\frontend\react\src\components\customer" />
       <recent name="C:\Users\Mohamed\Downloads\Amigoscode\customersManagement" />
       <recent name="C:\Users\Mohamed\Downloads\Amigoscode\customersManagement\frontend\react\src\components" />
       <recent name="C:\Users\Mohamed\Downloads\Amigoscode\customersManagement\backend" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.elazazy.journey" />
+    </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.elazazy.Main" />
+    <configuration name="AuthenticationIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="elazazy-api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.elazazy.*" />
+          <option name="PATTERN" value="com.elazazy.journey.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.elazazy.journey" />
+      <option name="MAIN_CLASS_NAME" value="com.elazazy.journey.AuthenticationIT" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="customer in elazazy-api" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AuthenticationIT.canLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="elazazy-api" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/backend/src/test/java/com/elazazy/customer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.elazazy.journey.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.elazazy.journey" />
+      <option name="MAIN_CLASS_NAME" value="com.elazazy.journey.AuthenticationIT" />
+      <option name="METHOD_NAME" value="canLogin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerIntegrationTest.canDeleteACustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="elazazy-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.elazazy.journey.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.elazazy.journey" />
+      <option name="MAIN_CLASS_NAME" value="com.elazazy.journey.CustomerIntegrationTest" />
+      <option name="METHOD_NAME" value="canDeleteACustomer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerIntegrationTest.canUpdateACustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="elazazy-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.elazazy.journey.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.elazazy.journey" />
+      <option name="MAIN_CLASS_NAME" value="com.elazazy.journey.CustomerIntegrationTest" />
+      <option name="METHOD_NAME" value="canUpdateACustomer" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -131,33 +239,21 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="db" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.elazazy in elazazy-api" />
-        <item itemvalue="JUnit.customer in elazazy-api" />
-        <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.AuthenticationIT.canLogin" />
+        <item itemvalue="JUnit.AuthenticationIT" />
+        <item itemvalue="JUnit.CustomerIntegrationTest.canUpdateACustomer" />
+        <item itemvalue="JUnit.CustomerIntegrationTest.canDeleteACustomer" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
       </set>
     </attachedChunks>
   </component>
@@ -179,7 +275,40 @@
       <workItem from="1725114948508" duration="1869000" />
       <workItem from="1725145571252" duration="30009000" />
       <workItem from="1725234969375" duration="13840000" />
-      <workItem from="1725307825816" duration="26458000" />
+      <workItem from="1725307825816" duration="32791000" />
+      <workItem from="1726185639687" duration="4603000" />
+      <workItem from="1728668493859" duration="1205000" />
+      <workItem from="1728999968249" duration="91000" />
+      <workItem from="1737830446510" duration="11477000" />
+      <workItem from="1737931883339" duration="1224000" />
+      <workItem from="1738269722985" duration="10000" />
+      <workItem from="1738269764899" duration="685000" />
+      <workItem from="1738355788617" duration="2391000" />
+      <workItem from="1738414693068" duration="9491000" />
+      <workItem from="1738619259250" duration="3016000" />
+      <workItem from="1738622339037" duration="116000" />
+      <workItem from="1738676166689" duration="12169000" />
+      <workItem from="1738738344342" duration="6356000" />
+      <workItem from="1738880832407" duration="7049000" />
+      <workItem from="1738941652910" duration="7343000" />
+      <workItem from="1738976057464" duration="277000" />
+      <workItem from="1738976447557" duration="449000" />
+      <workItem from="1738976934417" duration="81000" />
+      <workItem from="1738979624524" duration="286000" />
+      <workItem from="1738979941481" duration="4000" />
+      <workItem from="1738980172691" duration="515000" />
+      <workItem from="1739038277237" duration="1542000" />
+      <workItem from="1739046529164" duration="1188000" />
+      <workItem from="1739047748913" duration="592000" />
+      <workItem from="1739048485595" duration="104000" />
+      <workItem from="1739048643373" duration="63000" />
+      <workItem from="1739051159631" duration="8708000" />
+      <workItem from="1739062207996" duration="3110000" />
+      <workItem from="1739194601480" duration="3894000" />
+      <workItem from="1739891430956" duration="87000" />
+      <workItem from="1739891536485" duration="90000" />
+      <workItem from="1739902926152" duration="1114000" />
+      <workItem from="1739904248368" duration="3183000" />
     </task>
     <task id="LOCAL-00001" summary="Send slack msg with commit msg and sha to CD Workflow">
       <option name="closed" value="true" />
@@ -278,6 +407,7 @@
     <MESSAGE value="Frontend CD" />
     <MESSAGE value="Frontend CD Final" />
     <MESSAGE value="Frontend CD Final 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Frontend CD Final 2" />
+    <MESSAGE value="Adding JWT Auth &amp; Security" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding JWT Auth &amp; Security" />
   </component>
 </project>

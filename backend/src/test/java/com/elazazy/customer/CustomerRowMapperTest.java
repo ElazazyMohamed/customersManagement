@@ -27,7 +27,7 @@ class CustomerRowMapperTest {
         Customer customer = customerRowMapper.mapRow(resultSet, 1);
 
         // Then
-        Customer expected = new Customer(1L, "name", "name@gmail.com", 20, Gender.Female);
+        Customer expected = new Customer(1L, "name", "name@gmail.com", "password", 20, Gender.Female);
         assertEquals(expected, customer);
     }
 }

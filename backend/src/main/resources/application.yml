@@ -6,6 +6,14 @@ server:
 cors:
   allowed-origins: "*"
   allowed-methods: "*"
+  allowed-headers: "*"
+  exposed-headers: "*"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
 
 # Local Profile
 spring:
@@ -56,10 +64,10 @@ spring:
     activate:
       on-profile: aws
   flyway:
-    url: jdbc:postgresql://awseb-e-nqgypcsb9b-stack-awsebrdsdatabase-25x3kidweq2v.cd42k4my8g1b.eu-central-1.rds.amazonaws.com:5432/customer
+    url: jdbc:postgresql://awseb-e-ffqnjpeu5m-stack-awsebrdsdatabase-whkouhnnyol1.cd42k4my8g1b.eu-central-1.rds.amazonaws.com:5432/ebdb
     user: elazazy
     password: password
   datasource:
-    url: jdbc:postgresql://awseb-e-nqgypcsb9b-stack-awsebrdsdatabase-25x3kidweq2v.cd42k4my8g1b.eu-central-1.rds.amazonaws.com:5432/customer
+    url: jdbc:postgresql://awseb-e-ffqnjpeu5m-stack-awsebrdsdatabase-whkouhnnyol1.cd42k4my8g1b.eu-central-1.rds.amazonaws.com:5432/ebdb
     username: elazazy
     password: password

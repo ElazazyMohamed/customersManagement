@@ -2,25 +2,13 @@
   "AWSEBDockerrunVersion": 2,
   "containerDefinitions": [
     {
-      "name": "elazazy-react",
-      "image": "elazazymohamed/elazazy-react:03.09.2024.13.51.30",
-      "essential": true,
-      "memory": 256,
-      "portMappings": [
-        {
-          "hostPort": 80,
-          "containerPort": 5173
-        }
-      ]
-    },
-    {
       "name": "elazazy-api",
       "image": "elazazymohamed/elazazy-api:03.09.2024.01.26.33",
       "essential": true,
       "memory": 512,
       "portMappings": [
         {
-          "hostPort": 8080,
+          "hostPort": 80,
           "containerPort": 8080
         }
       ],

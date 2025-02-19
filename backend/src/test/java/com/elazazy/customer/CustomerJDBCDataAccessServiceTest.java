@@ -32,7 +32,7 @@ class CustomerJDBCDataAccessServiceTest extends AbstractTestContainersUnitTest {
         Customer customer = new Customer(
                 firstName + " " + lastName,
                 lastName.toLowerCase() + '.' + firstName.toLowerCase() + random.nextInt(1, 99) + "@gmail.com",
-                random.nextInt(16, 99),
+                "password", random.nextInt(16, 99),
                 Gender.Male);
         underTest.insertCustomer(customer);
 
@@ -58,7 +58,7 @@ class CustomerJDBCDataAccessServiceTest extends AbstractTestContainersUnitTest {
         Customer customer = new Customer(
                 firstName + " " + lastName,
                 email,
-                random.nextInt(16, 99),
+                "password", random.nextInt(16, 99),
                 Gender.Male);
         underTest.insertCustomer(customer);
         Long id = underTest.selectAllCustomers().stream()
@@ -104,7 +104,7 @@ class CustomerJDBCDataAccessServiceTest extends AbstractTestContainersUnitTest {
         Customer customer = new Customer(
                 firstName + " " + lastName,
                 email,
-                random.nextInt(16, 99),
+                "password", random.nextInt(16, 99),
                 Gender.Male);
         underTest.insertCustomer(customer);
         Long id = underTest.selectAllCustomers().stream()
@@ -138,7 +138,7 @@ class CustomerJDBCDataAccessServiceTest extends AbstractTestContainersUnitTest {
         Customer customer = new Customer(
                 firstName + " " + lastName,
                 email,
-                random.nextInt(16, 99),
+                "password", random.nextInt(16, 99),
                 Gender.Male);
         underTest.insertCustomer(customer);
 
@@ -176,7 +176,7 @@ class CustomerJDBCDataAccessServiceTest extends AbstractTestContainersUnitTest {
         Customer customer = new Customer(
                 firstName + " " + lastName,
                 email,
-                random.nextInt(16, 99),
+                "password", random.nextInt(16, 99),
                 Gender.Male);
         underTest.insertCustomer(customer);
         Long id = underTest.selectAllCustomers().stream()
@@ -205,7 +205,7 @@ class CustomerJDBCDataAccessServiceTest extends AbstractTestContainersUnitTest {
         Customer customer = new Customer(
                 firstName + " " + lastName,
                 email,
-                random.nextInt(16, 99),
+                "password", random.nextInt(16, 99),
                 Gender.Male);
         underTest.insertCustomer(customer);
         Long id = underTest.selectAllCustomers().stream()
@@ -234,7 +234,7 @@ class CustomerJDBCDataAccessServiceTest extends AbstractTestContainersUnitTest {
         Customer customer = new Customer(
                 firstName + " " + lastName,
                 email,
-                random.nextInt(16, 99),
+                "password", random.nextInt(16, 99),
                 Gender.Male);
         underTest.insertCustomer(customer);
         Long id = -1L;
