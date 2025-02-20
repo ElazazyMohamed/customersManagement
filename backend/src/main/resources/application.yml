@@ -64,10 +64,10 @@ spring:
     activate:
       on-profile: aws
   flyway:
-    url: jdbc:postgresql://awseb-e-ffqnjpeu5m-stack-awsebrdsdatabase-whkouhnnyol1.cd42k4my8g1b.eu-central-1.rds.amazonaws.com:5432/ebdb
+    url: jdbc:postgresql://awseb-e-aqprf5dcv2-stack-awsebrdsdatabase-ue1phdgtbpge.cd42k4my8g1b.eu-central-1.rds.amazonaws.com:5432/ebdb
     user: elazazy
     password: password
   datasource:
-    url: jdbc:postgresql://awseb-e-ffqnjpeu5m-stack-awsebrdsdatabase-whkouhnnyol1.cd42k4my8g1b.eu-central-1.rds.amazonaws.com:5432/ebdb
+    url: jdbc:postgresql://awseb-e-aqprf5dcv2-stack-awsebrdsdatabase-ue1phdgtbpge.cd42k4my8g1b.eu-central-1.rds.amazonaws.com:5432/ebdb
     username: elazazy
     password: password
