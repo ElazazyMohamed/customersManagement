@@ -15,8 +15,8 @@ import {
 import {
     getCustomers,
 } from "./services/client.js";
-import CardWithImage from "./components/CardWithImage.jsx";
-import DrawerForm from "./components/DrawerForm.jsx";
+import CardWithImage from "./components/customer/CardWithImage.jsx";
+import DrawerForm from "./components/customer/DrawerForm.jsx";
 import {
     errorNotification,
 } from "./services/notification.js";
@@ -102,4 +102,3 @@ const App = () => {
 }
 
 export default App;
-
