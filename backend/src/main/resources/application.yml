@@ -9,6 +9,7 @@ cors:
   allowed-headers: "*"
   exposed-headers: "*"
 
+# Expose health from actuator
 management:
   endpoints:
     web:
@@ -27,7 +28,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/customer
     username: elazazy
     password: password
-    schemas: public
+#    schemas: public
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
