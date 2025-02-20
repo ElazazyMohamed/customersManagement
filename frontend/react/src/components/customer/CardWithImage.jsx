@@ -12,7 +12,7 @@ import {
     useColorModeValue,
     useDisclosure,
 } from '@chakra-ui/react'
-import MyAlertDialog from "./shared/MyAlertDialog.jsx";
+import MyAlertDialog from "../shared/MyAlertDialog.jsx";
 import DrawerForm from "./DrawerForm.jsx";
 
 const CardWithImage = ({

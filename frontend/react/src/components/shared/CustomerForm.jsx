@@ -17,11 +17,11 @@ import {
 import {
     saveCustomer,
     updateCustomer,
-} from "../services/client.js";
+} from "../../services/client.js";
 import {
     errorNotification,
     successNotification,
-} from "../services/notification.js";
+} from "../../services/notification.js";
 
 const MyTextInput = ({ label, ...props }) => {
     // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
@@ -58,7 +58,7 @@ const MySelect = ({ label, ...props }) => {
     );
 };
 
-const MyBoth = () => {
+const RegistrationForm = () => {
     return (
         <>
             <MyTextInput
@@ -73,6 +73,13 @@ const MyBoth = () => {
                 name="email"
                 type="email"
                 placeholder="email@gmail.com"
+            />
+
+            <MyTextInput
+                label="Password"
+                name="password"
+                type="password"
+                placeholder="changeMe"
             />
 
             <MyTextInput
@@ -106,6 +113,7 @@ const CustomerForm = ({
                     initialValues={{
                         name: '',
                         email: '',
+                        password: '',
                         age: '',
                         gender: '',
                     }}
@@ -116,6 +124,10 @@ const CustomerForm = ({
                         email: Yup.string()
                             .email('Invalid email address')
                             .required('Email Required'),
+                        password: Yup.string()
+                            .min(4, 'Must be at least 4 characters or more')
+                            .max(15, 'Must be 15 characters or less')
+                            .required('Password Required'),
                         age: Yup.number()
                             .min(16, 'Must be at least 16 years or older')
                             .max(100, 'Must be less than 100 years or older')
@@ -135,7 +147,7 @@ const CustomerForm = ({
                                     "Customer Saved",
                                     `${customer.name} was created successfully`
                                 );
-                                fetchCustomers();
+                                fetchCustomers && fetchCustomers();
                                 onClose();
                             }).catch(err => {
                                 errorNotification(
@@ -151,7 +163,7 @@ const CustomerForm = ({
                         return (
                             <Form>
                                 <Stack spacing={"24px"}>
-                                    <MyBoth/>
+                                    <RegistrationForm/>
                                     <Button isDisabled={!isValid || isSubmitting} type="submit">Submit</Button>
                                 </Stack>
                             </Form>
@@ -201,7 +213,7 @@ const CustomerForm = ({
                         return (
                             <Form>
                                 <Stack spacing={"24px"}>
-                                    <MyBoth/>
+                                    <RegistrationForm/>
                                     <Button
                                         isDisabled={!(isValid && dirty) || isSubmitting}
                                         type="submit"

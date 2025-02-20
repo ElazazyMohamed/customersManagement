@@ -8,7 +8,7 @@ import {
     DrawerContent,
     DrawerCloseButton,
 } from '@chakra-ui/react'
-import CustomerForm from "./CustomerForm.jsx";
+import CustomerForm from "../shared/CustomerForm.jsx";
 
 const CloseIcon = () => "x";
 
