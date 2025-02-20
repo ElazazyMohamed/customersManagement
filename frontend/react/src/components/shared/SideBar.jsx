@@ -30,6 +30,7 @@ import {
     FiBell,
     FiChevronDown,
 } from 'react-icons/fi'
+import { useAuth } from "../context/AuthContext.jsx";
 
 const LinkItems = [
     { name: 'Home', icon: FiHome },
@@ -107,6 +108,7 @@ const NavItem = ({ icon, children, ...rest }) => {
 }
 
 const MobileNav = ({ onOpen, ...rest }) => {
+    const { logout, customer } = useAuth();
     return (
         <Flex
             ml={{ base: 0, md: 60 }}
@@ -151,7 +153,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                                     alignItems="flex-start"
                                     spacing="1px"
                                     ml="2">
-                                    <Text fontSize="sm">Mohamed Elazazy</Text>
+                                    <Text fontSize="sm">{customer?.name}</Text>
                                     <Text fontSize="xs" color="gray.600">
                                         Admin
                                     </Text>
@@ -168,7 +170,9 @@ const MobileNav = ({ onOpen, ...rest }) => {
                             <MenuItem>Settings</MenuItem>
                             <MenuItem>Billing</MenuItem>
                             <MenuDivider />
-                            <MenuItem>Sign out</MenuItem>
+                            <MenuItem onClick={logout}>
+                                Sign Out
+                            </MenuItem>
                         </MenuList>
                     </Menu>
                 </Flex>

@@ -1,0 +1,99 @@
+package com.elazazy.journey;
+
+import com.elazazy.auth.AuthenticationRequest;
+import com.elazazy.auth.AuthenticationResponse;
+import com.elazazy.customer.CustomerDTO;
+import com.elazazy.customer.CustomerRegistrationRequest;
+import com.elazazy.customer.Gender;
+import com.elazazy.jwt.JWTUtil;
+import com.github.javafaker.Faker;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.reactive.server.EntityExchangeResult;
+import org.springframework.test.web.reactive.server.WebTestClient;
+import reactor.core.publisher.Mono;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
+
+@SpringBootTest(webEnvironment = RANDOM_PORT)
+public class AuthenticationIT {
+
+    @Autowired
+    private WebTestClient webTestClient;
+    private static final String AUTHENTICATION_URI = "/api/v1/auth";
+    private static final String CUSTOMER_URI = "/api/v1/customers";
+    @Autowired
+    private JWTUtil jwtUtil;
+
+    @Test
+    void canLogin() {
+        // Create a registration request
+        Faker faker = new Faker();
+        String firstName = faker.name().firstName();
+        String lastName = faker.name().lastName();
+        String name = firstName + " " + lastName;
+        Integer age = faker.number().numberBetween(16, 99);
+        Gender gender = age%2 == 0 ? Gender.Male : Gender.Female;
+        String email = lastName.toLowerCase() + '.' + firstName.toLowerCase() + age + "@gmail.com";
+        CustomerRegistrationRequest customerRegistrationRequest = new CustomerRegistrationRequest(
+                name, email, "password", age, gender
+        );
+
+        AuthenticationRequest authenticationRequest = new AuthenticationRequest(email, "password");
+
+        webTestClient.post()
+                .uri(AUTHENTICATION_URI + "/login")
+                .accept(MediaType.APPLICATION_JSON)
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(Mono.just(authenticationRequest), AuthenticationRequest.class)
+                .exchange()
+                .expectStatus()
+                .isUnauthorized();
+
+        // send a post request
+        webTestClient.post()
+                .uri(CUSTOMER_URI)
+                .accept(MediaType.APPLICATION_JSON)
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(Mono.just(customerRegistrationRequest), CustomerRegistrationRequest.class)
+                .exchange()
+                .expectStatus()
+                .isOk();
+
+        EntityExchangeResult<AuthenticationResponse> result = webTestClient.post()
+                .uri(AUTHENTICATION_URI + "/login")
+                .accept(MediaType.APPLICATION_JSON)
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(Mono.just(authenticationRequest), AuthenticationRequest.class)
+                .exchange()
+                .expectStatus()
+                .isOk()
+                .expectBody(new ParameterizedTypeReference<AuthenticationResponse>() {
+                })
+                .returnResult();
+
+        String jwtToken = result.getResponseHeaders()
+                .get(HttpHeaders.AUTHORIZATION)
+                .get(0);
+
+        AuthenticationResponse authenticationResponse = result.getResponseBody();
+        CustomerDTO customerDTO = authenticationResponse.customerDTO();
+
+        boolean isValid = jwtUtil.isTokenValid(jwtToken, customerDTO.email());
+        System.out.println("Is token valid: " + isValid);
+        assertThat(isValid).isTrue();
+        assertThat(customerDTO.name()).isEqualTo(name);
+        System.out.println(customerDTO.name() + " " + name);
+        assertThat(customerDTO.email()).isEqualTo(email);
+        System.out.println(customerDTO.email() + " " + email);
+        assertThat(customerDTO.age()).isEqualTo(age);
+        System.out.println(customerDTO.age() + " " + age);
+        assertThat(customerDTO.gender()).isEqualTo(gender);
+        System.out.println(customerDTO.gender() + " " + gender);
+    }
+}
